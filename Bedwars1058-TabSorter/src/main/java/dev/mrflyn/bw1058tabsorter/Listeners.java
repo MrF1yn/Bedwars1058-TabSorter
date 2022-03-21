@@ -18,6 +18,8 @@ public class Listeners implements Listener {
             i++;
         }
         Main.plugin.serialID.put(p, i);
+        Main.plugin.sendHeaderFooter(p);
+
     }
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e) {

@@ -17,7 +17,7 @@ public class PacketListener extends PacketAdapter {
         @Override
         public void onPacketSending(PacketEvent e){
             if(e.getPacketType() == PacketType.Play.Server.SCOREBOARD_TEAM){
-                Player p = e.getPlayer();
+//                Player p = e.getPlayer();
                 PacketContainer packet = e.getPacket();
                 Player playerTarget = Bukkit.getPlayer(packet.getStrings().read(0));
                 if(playerTarget==null)return;
