@@ -48,8 +48,8 @@ public class HeaderFooterRefreshTask {
         }
         WrapperPlayServerPlayerListHeaderFooter wrapper = new WrapperPlayServerPlayerListHeaderFooter();
         for(Player p: Bukkit.getServer().getOnlinePlayers()){
-            wrapper.setHeader(null);
-            wrapper.setFooter(null);
+            wrapper.setHeader(WrappedChatComponent.fromText(""));
+            wrapper.setFooter(WrappedChatComponent.fromText(""));
             wrapper.sendPacket(p);
         }
     }
