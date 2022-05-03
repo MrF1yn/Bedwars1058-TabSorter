@@ -1,0 +1,24 @@
+header-footer:
+  enabled: true
+  #refresh interval in seconds
+  refresh-interval: 300
+  header:
+    - 'This is BedWars1058-TabSorter-Addon Header'
+    - 'It has multiple lines and placeholder api support'
+    - 'you can use &aColor Codes too.'
+  footer:
+    - 'This is BedWars1058-TabSorter-Addon Footer'
+    - 'It has multiple lines and placeholder api support'
+    - 'you can use &aColor Codes too.'
+
+Sorting-Teams:
+  - "RED"
+  - "BLUE"
+  - "GREEN"
+  - "YELLOW"
+  - "AQUA"
+  - "WHITE"
+  - "PINK"
+  - "GRAY"
+  - "DARK_GREEN"
+  - "DARK_GRAY"
