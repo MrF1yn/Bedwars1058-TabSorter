@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Main extends JavaPlugin {
     public HashMap<Player, Integer> serialID;
-//    public HashMap<Player, String> lastTeamName;
+    public HashMap<Player, String> lastTeamName;
     public static Main plugin;
     public HeaderFooterRefreshTask hTask;
     @Override
@@ -22,7 +22,7 @@ public class Main extends JavaPlugin {
         saveDefaultConfig();
         plugin = this;
         serialID = new HashMap<>();
-//        lastTeamName = new HashMap<>();
+        lastTeamName = new HashMap<>();
         getServer().getPluginManager().registerEvents(new Listeners(), this);
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketListener(this, PacketType.Play.Server.SCOREBOARD_TEAM));
         if(getConfig().getBoolean("header-footer.enabled")){

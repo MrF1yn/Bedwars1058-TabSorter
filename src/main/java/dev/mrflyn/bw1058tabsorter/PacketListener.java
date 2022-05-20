@@ -24,11 +24,14 @@ public class PacketListener extends PacketAdapter {
                     return;
                 if (!BedWars.getAPI().getArenaUtil().isPlaying(playerTarget))
                     return;
+                if(BedWars.getAPI().getArenaUtil().getArenaByPlayer(playerTarget)==null)return;
+                if(BedWars.getAPI().getArenaUtil().getArenaByPlayer(playerTarget).getTeam(playerTarget)==null)return;
                 String teamName = BedWars.getAPI().getArenaUtil().getArenaByPlayer(playerTarget)
                         .getTeam(playerTarget).getColor().name();
                 int position = Main.plugin.getConfig().getStringList("Sorting-Teams").indexOf(teamName);
-
-                packet.getStrings().write(0, String.format("%02d", position) + Main.plugin.serialID.get(playerTarget));
+                String newTeam = String.format("%02d", position) + Main.plugin.serialID.get(playerTarget);
+                Main.plugin.lastTeamName.put(playerTarget, newTeam);
+                packet.getStrings().write(0, newTeam);
             }
         }
 }
