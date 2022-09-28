@@ -31,11 +31,11 @@
             <systemPath>H:\ProjectAPIsSpigot\PacketWrapper.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>bedwars-plugin-22.3.4</groupId>
-            <artifactId>bedwars-plugin-22.3.4</artifactId>
+            <groupId>bedwars-plugin-22.7</groupId>
+            <artifactId>bedwars-plugin-22.7</artifactId>
             <scope>system</scope>
             <version>1.0</version>
-            <systemPath>C:\Users\GT-ACE\Downloads\bedwars-plugin-22.3.4.jar</systemPath>
+            <systemPath>H:\ProjectAPIsSpigot\bedwars-plugin-22.7.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>PlaceholderAPI-2.10.9</groupId>
@@ -43,6 +43,13 @@
             <scope>system</scope>
             <version>1.0</version>
             <systemPath>H:\ProjectAPIsSpigot\PlaceholderAPI-2.10.9.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>TAB.v3.1.5</groupId>
+            <artifactId>TAB.v3.1.5</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>H:\ProjectAPIsSpigot\TAB.v3.1.5.jar</systemPath>
         </dependency>
     </dependencies>
     <properties>

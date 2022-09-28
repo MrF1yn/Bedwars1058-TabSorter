@@ -26,18 +26,18 @@ public class HeaderFooterRefreshTask {
             @Override
             public void run(){
                 WrapperPlayServerPlayerListHeaderFooter wrapper = new WrapperPlayServerPlayerListHeaderFooter();
-                String header = Main.List2String(Main.plugin.getConfig().getStringList("header-footer.header"));
-                String footer = Main.List2String(Main.plugin.getConfig().getStringList("header-footer.footer"));
+                String header = BW1058TabSorter.List2String(BW1058TabSorter.plugin.getConfig().getStringList("header-footer.header"));
+                String footer = BW1058TabSorter.List2String(BW1058TabSorter.plugin.getConfig().getStringList("header-footer.footer"));
                 for(Player p: Bukkit.getServer().getOnlinePlayers()){
-                    header = ChatColor.translateAlternateColorCodes('&', Main.parsePAPI(p,header));
-                    footer = ChatColor.translateAlternateColorCodes('&', Main.parsePAPI(p,footer));
+                    header = ChatColor.translateAlternateColorCodes('&', BW1058TabSorter.parsePAPI(p,header));
+                    footer = ChatColor.translateAlternateColorCodes('&', BW1058TabSorter.parsePAPI(p,footer));
                     wrapper.setHeader(WrappedChatComponent.fromText(header));
                     wrapper.setFooter(WrappedChatComponent.fromText(footer));
                     wrapper.sendPacket(p);
                 }
 
             }
-        }.runTaskTimerAsynchronously(Main.plugin, 0,interval);
+        }.runTaskTimerAsynchronously(BW1058TabSorter.plugin, 0,interval);
 
     }
 

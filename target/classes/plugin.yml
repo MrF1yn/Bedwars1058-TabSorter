@@ -1,12 +1,13 @@
 name: Bedwars1058-TabSorter
 version: 1.4
 author: MrF1yn
-main: dev.mrflyn.bw1058tabsorter.Main
+main: dev.mrflyn.bw1058tabsorter.BW1058TabSorter
 api-version: 1.13
 depend:
   - ProtocolLib
   - BedWars1058
 softdepend:
+  - TAB
   - PlaceholderAPI
 commands:
   bwtabreload:

@@ -12,7 +12,8 @@ public class Commands implements CommandExecutor {
             commandSender.sendMessage(ChatColor.RED+"You don't have the required permission to execute this command.");
             return true;
         }
-        Main.plugin.reload();
+        BW1058TabSorter.plugin.reload();
+        BW1058TabSorter.plugin.loadTABSupport();
         commandSender.sendMessage(ChatColor.GREEN+"BedWars1058-TabSorter Reloaded Successfully.");
         return true;
     }

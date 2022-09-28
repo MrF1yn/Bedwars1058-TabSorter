@@ -1,7 +1,6 @@
 package dev.mrflyn.bw1058tabsorter;
 
 import com.andrei1058.bedwars.BedWars;
-import com.andrei1058.bedwars.api.arena.team.TeamColor;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketContainer;
@@ -28,9 +27,9 @@ public class PacketListener extends PacketAdapter {
                 if(BedWars.getAPI().getArenaUtil().getArenaByPlayer(playerTarget).getTeam(playerTarget)==null)return;
                 String teamName = BedWars.getAPI().getArenaUtil().getArenaByPlayer(playerTarget)
                         .getTeam(playerTarget).getColor().name();
-                int position = Main.plugin.getConfig().getStringList("Sorting-Teams").indexOf(teamName);
-                String newTeam = String.format("%02d", position) + Main.plugin.serialID.get(playerTarget);
-                Main.plugin.lastTeamName.put(playerTarget, newTeam);
+                int position = BW1058TabSorter.plugin.getConfig().getStringList("Sorting-Teams").indexOf(teamName);
+                String newTeam = String.format("%02d", position) + BW1058TabSorter.plugin.serialID.get(playerTarget);
+                BW1058TabSorter.plugin.lastTeamName.put(playerTarget, newTeam);
                 packet.getStrings().write(0, newTeam);
             }
         }

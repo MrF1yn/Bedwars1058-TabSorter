@@ -1,6 +1,5 @@
 package dev.mrflyn.bw1058tabsorter;
 
-import com.andrei1058.bedwars.BedWars;
 import com.andrei1058.bedwars.api.events.player.PlayerLeaveArenaEvent;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
@@ -12,7 +11,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Listeners implements Listener {
@@ -21,12 +19,12 @@ public class Listeners implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
         int i = 0;
-        if (Main.plugin.serialID.containsKey(p)) return;
-        while (Main.plugin.serialID.containsValue(i)) {
+        if (BW1058TabSorter.plugin.serialID.containsKey(p)) return;
+        while (BW1058TabSorter.plugin.serialID.containsValue(i)) {
             i++;
         }
-        Main.plugin.serialID.put(p, i);
-        Main.plugin.sendHeaderFooter(p);
+        BW1058TabSorter.plugin.serialID.put(p, i);
+        BW1058TabSorter.plugin.sendHeaderFooter(p);
 
     }
 
@@ -36,7 +34,7 @@ public class Listeners implements Listener {
         allPlayers.addAll(e.getArena().getSpectators());
         allPlayers.addAll(e.getArena().getLeavingPlayers());
         for(Player p : allPlayers) {
-            String teamName = Main.plugin.lastTeamName.get(p);
+            String teamName = BW1058TabSorter.plugin.lastTeamName.get(p);
             if (teamName==null)continue;
             PacketContainer packet = new PacketContainer(PacketType.Play.Server.SCOREBOARD_TEAM);
             packet.getStrings().write(0, teamName);
@@ -52,7 +50,7 @@ public class Listeners implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-        Main.plugin.serialID.remove(p);
-        Main.plugin.lastTeamName.remove(p);
+        BW1058TabSorter.plugin.serialID.remove(p);
+        BW1058TabSorter.plugin.lastTeamName.remove(p);
     }
 }
