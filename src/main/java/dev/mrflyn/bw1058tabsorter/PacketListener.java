@@ -27,7 +27,7 @@ public class PacketListener extends PacketAdapter {
                 if(BedWars.getAPI().getArenaUtil().getArenaByPlayer(playerTarget).getTeam(playerTarget)==null)return;
                 String teamName = BedWars.getAPI().getArenaUtil().getArenaByPlayer(playerTarget)
                         .getTeam(playerTarget).getColor().name();
-                int position = BW1058TabSorter.plugin.getConfig().getStringList("Sorting-Teams").indexOf(teamName);
+                int position = BW1058TabSorter.plugin.configManager.getConfig().getStringList("Sorting-Teams").indexOf(teamName);
                 String newTeam = String.format("%02d", position) + BW1058TabSorter.plugin.serialID.get(playerTarget);
                 BW1058TabSorter.plugin.lastTeamName.put(playerTarget, newTeam);
                 packet.getStrings().write(0, newTeam);

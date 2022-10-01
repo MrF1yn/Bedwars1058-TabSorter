@@ -1,0 +1,9 @@
+dev\mrflyn\bw1058tabsorter\HeaderFooterRefreshTask$1.class
+dev\mrflyn\bw1058tabsorter\ConfigManager.class
+dev\mrflyn\bw1058tabsorter\BW1058TabSorter.class
+dev\mrflyn\bw1058tabsorter\integrations\TabInjector.class
+dev\mrflyn\bw1058tabsorter\Commands.class
+dev\mrflyn\bw1058tabsorter\HeaderFooterRefreshTask.class
+dev\mrflyn\bw1058tabsorter\Listeners.class
+dev\mrflyn\bw1058tabsorter\PacketListener.class
+dev\mrflyn\bw1058tabsorter\integrations\BwSortingType.class

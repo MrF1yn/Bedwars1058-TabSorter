@@ -25,7 +25,7 @@ public class BwSortingType extends SortingType {
         if(BedWars.getAPI().getArenaUtil().getArenaByPlayer(player).getTeam(player)==null)return prefix;
         String teamName = BedWars.getAPI().getArenaUtil().getArenaByPlayer(player)
                 .getTeam(player).getColor().name();
-        int position = BW1058TabSorter.plugin.getConfig().getStringList("Sorting-Teams").indexOf(teamName);
+        int position = BW1058TabSorter.plugin.configManager.getConfig().getStringList("Sorting-Teams").indexOf(teamName);
         prefix = String.format("%02d", position);
         return prefix;
     }

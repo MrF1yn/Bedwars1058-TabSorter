@@ -26,8 +26,8 @@ public class HeaderFooterRefreshTask {
             @Override
             public void run(){
                 WrapperPlayServerPlayerListHeaderFooter wrapper = new WrapperPlayServerPlayerListHeaderFooter();
-                String header = BW1058TabSorter.List2String(BW1058TabSorter.plugin.getConfig().getStringList("header-footer.header"));
-                String footer = BW1058TabSorter.List2String(BW1058TabSorter.plugin.getConfig().getStringList("header-footer.footer"));
+                String header = BW1058TabSorter.List2String(BW1058TabSorter.plugin.configManager.getConfig().getStringList("header-footer.header"));
+                String footer = BW1058TabSorter.List2String(BW1058TabSorter.plugin.configManager.getConfig().getStringList("header-footer.footer"));
                 for(Player p: Bukkit.getServer().getOnlinePlayers()){
                     header = ChatColor.translateAlternateColorCodes('&', BW1058TabSorter.parsePAPI(p,header));
                     footer = ChatColor.translateAlternateColorCodes('&', BW1058TabSorter.parsePAPI(p,footer));
